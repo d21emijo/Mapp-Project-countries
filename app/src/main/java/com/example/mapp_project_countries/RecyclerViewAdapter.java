@@ -26,15 +26,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     @NonNull
-    public MountainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MountainViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.countries,parent,false));
+    public CountriesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new CountriesViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.countries,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(MountainViewHolder holder, int position) {
+    public void onBindViewHolder(CountriesViewHolder holder, int position) {
         Countries countries = items.get(position);//hämta index position
 
-        holder.title.setText(countries.getName()); //skriva ut i title name för index
+        holder.country.setText(countries.getName()); //skriva ut i title name för index
         //för att skapa mer gör ny textview och använd settext som ovan.
 
     }
@@ -44,13 +44,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return items.size();
     }
 
-    public class MountainViewHolder extends RecyclerView.ViewHolder  {
-        TextView title;
+    public class CountriesViewHolder extends RecyclerView.ViewHolder  {
+        TextView country;
 
-        MountainViewHolder(View itemView) {
+        CountriesViewHolder(View itemView) {
             super(itemView);
 
-            title = itemView.findViewById(R.id.title);
+            country = itemView.findViewById(R.id.country);
         }
 
     }

@@ -1,5 +1,7 @@
 package com.example.mapp_project_countries;
 
+
+
 public class Countries {
     private String name;
     private String location;
