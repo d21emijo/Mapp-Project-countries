@@ -34,8 +34,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(CountriesViewHolder holder, int position) {
         Countries countries = items.get(position);//hämta index position
 
-        holder.country.setText(countries.getName()); //skriva ut i title name för index
-        //för att skapa mer gör ny textview och använd settext som ovan.
+        holder.country.setText("name: "+countries.getName()); //skriva ut i title name för index
+        holder.population.setText("Continent: " +countries.getLocation());
+        holder.whatdo.setText(String.valueOf("population: " + countries.getSize())+ " thousand");
 
     }
 
@@ -46,11 +47,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class CountriesViewHolder extends RecyclerView.ViewHolder  {
         TextView country;
+        TextView whatdo;
+        TextView population;
 
         CountriesViewHolder(View itemView) {
             super(itemView);
 
             country = itemView.findViewById(R.id.country);
+            population = itemView.findViewById(R.id.population);
+            whatdo = itemView.findViewById(R.id.whatdo);
         }
 
     }

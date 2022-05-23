@@ -5,9 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -20,6 +24,10 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     private RecyclerView recyclerView;
     private RecyclerViewAdapter recyclerViewAdapter;
+
+
+
+
 
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=d21emijo";
@@ -39,8 +47,24 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         recyclerViewAdapter = new RecyclerViewAdapter();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(recyclerViewAdapter);
+        Button about = findViewById(R.id.about);
+
+        //myWebView = findViewById(R.id.myWebView);
 
 
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("===","button press");
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+
+
+            }
+
+
+        });
 
 
 
@@ -60,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         recyclerViewAdapter.notifyDataSetChanged();     //uppdatera
 
         Log.d("====","Number of element " + listOfCountries.size() );
-        Log.d("=====" , "element 0 "+ listOfCountries.get(0).toString());
+        Log.d("=====" , "element 0 "+ listOfCountries.get(1).toString());
 
     }
 
