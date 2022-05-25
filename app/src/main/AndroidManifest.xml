@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MappProjectcountries">
         <activity android:name=".AboutActivity"
-            android:exported="false"/>
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
