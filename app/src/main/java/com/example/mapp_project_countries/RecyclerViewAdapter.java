@@ -35,8 +35,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Countries countries = items.get(position);//hämta index position
 
         holder.country.setText("name: "+countries.getName()); //skriva ut i title name för index
-        holder.population.setText("Continent: " +countries.getLocation());
-        holder.whatdo.setText(String.valueOf("population: " + countries.getSize())+ " thousand");
+        holder.whatdo.setText("Continent: " +countries.getLocation());
+        holder.population.setText(String.valueOf("population: " + countries.getSize())+ " thousand");
 
     }
 
